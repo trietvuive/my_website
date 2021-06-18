@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Triet Vo&#39;s new cool site</title>
+        <link>https//trietmvo.com/posts/</link>
+        <description>All Posts | Triet Vo&#39;s new cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>triet.vo@nyu.edu (Triet Vo)</managingEditor>
+            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Thu, 17 Jun 2021 22:56:33 -0500</lastBuildDate><atom:link href="https//trietmvo.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>First_post</title>
+    <link>https//trietmvo.com/first_post/</link>
+    <pubDate>Thu, 17 Jun 2021 22:56:33 -0500</pubDate>
+    <author>Author</author>
+    <guid>https//trietmvo.com/first_post/</guid>
+    <description><![CDATA[This is my first site ever! That was easy. Imagine being webdev lmao /s]]></description>
+</item></channel>
+</rss>
