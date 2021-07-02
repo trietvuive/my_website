@@ -2,8 +2,14 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https//trietmvo.com/first_post/</loc><lastmod>2021-06-17T22:56:33-05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https//trietmvo.com/posts/</loc><lastmod>2021-06-17T22:56:33-05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https//trietmvo.com/</loc><lastmod>2021-06-17T22:56:33-05:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https//trietmvo.com/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https//trietmvo.com/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://trietmvo.com/posts/anime_im_watching/</loc><lastmod>2021-07-01T22:02:18-04:00</lastmod></url><url>
+            <loc>https://trietmvo.com/posts/</loc><lastmod>2021-07-01T22:02:18-04:00</lastmod></url><url>
+            <loc>https://trietmvo.com/</loc><lastmod>2021-07-01T22:02:18-04:00</lastmod></url><url>
+            <loc>https://trietmvo.com/posts/fixing_website/</loc><lastmod>2021-07-01T21:42:33-04:00</lastmod></url><url>
+            <loc>https://trietmvo.com/posts/test_rdt_example/</loc><lastmod>2021-06-29T16:46:18-05:00</lastmod></url><url>
+            <loc>https://trietmvo.com/posts/happy-birthday-to-my-dad/</loc><lastmod>2021-06-21T23:44:22-05:00</lastmod></url><url>
+            <loc>https://trietmvo.com/posts/happy-fathers-day/</loc><lastmod>2021-06-20T20:49:23-05:00</lastmod></url><url>
+            <loc>https://trietmvo.com/posts/test_deploy/</loc><lastmod>2021-06-18T16:46:18-05:00</lastmod></url><url>
+            <loc>https://trietmvo.com/posts/first_post/</loc><lastmod>2021-06-17T22:56:33-05:00</lastmod></url><url>
+            <loc>https://trietmvo.com/categories/</loc></url><url>
+            <loc>https://trietmvo.com/tags/</loc></url></urlset>

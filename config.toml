@@ -17,14 +17,14 @@ theme = "LoveIt"
   # site default theme ("light", "dark", "auto")
   defaultTheme = "dark"
   # public git repo url only then enableGitInfo is true
-  gitRepo = ""
+  gitRepo = "https://github.com/trietvuive/my_website"
   #  which hash function used for SRI, when empty, no SRI is used
   # ("sha256", "sha384", "sha512", "md5")
   fingerprint = ""
   #  date format
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
-  images = ["/logo.png"]
+  images = ["/images/avatar.jpg"]
 
   #  App icon config
   [params.app]
@@ -33,7 +33,7 @@ theme = "LoveIt"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
-    svgFavicon = ""
+    svgFavicon = "/images/avatar.jpg"
     # Android browser theme color
     themeColor = "#ffffff"
     # Safari mask icon color
@@ -72,7 +72,7 @@ theme = "LoveIt"
     #  Header title config
     [params.header.title]
       # URL of the LOGO
-      logo = ""
+      logo = "/images/logo.png"
       # title name
       name = "Triet Vo's new cool site"
       # you can add extra information before the name (HTML format is supported), such as icons
@@ -138,7 +138,7 @@ theme = "LoveIt"
       # whether to show social links
       social = true
       #  disclaimer (HTML format is supported)
-      disclaimer = "All of my opinions are that of my employers"
+      disclaimer = "Opinions are those of your employers"
     # Home page posts
     [params.home.posts]
       enable = true
@@ -150,11 +150,11 @@ theme = "LoveIt"
 
   # Social config about the author
   [params.social]
-    GitHub = "https://github.com/trietvuive"
-    Linkedin = "https://www.linkedin.com/in/triet-vo-445772183/"
+    GitHub = "trietvuive"
+    Linkedin = "triet-vo-445772183/"
     Twitter = ""
     Instagram = ""
-    Facebook = "https://www.facebook.com/minhtriet.vo.372/"
+    Facebook = "minhtriet.vo.372/"
     Telegram = ""
     Medium = ""
     Gitlab = ""
@@ -224,7 +224,7 @@ theme = "LoveIt"
     #  whether to enable twemoji
     twemoji = true
     # whether to enable lightgallery
-    lightgallery = false
+    lightgallery = true
     #  whether to enable the ruby extended syntax
     ruby = true
     #  whether to enable the fraction extended syntax
@@ -345,7 +345,7 @@ theme = "LoveIt"
         # located in "themes/LoveIt/assets/data/emoji/" directory
         # you can store your own data files in the same path under your project:
         # "assets/data/emoji/"
-        emoji = ""
+        emoji = "google.yml"
       # Facebook comment config
       [params.page.comment.facebook]
         enable = false
@@ -393,8 +393,8 @@ theme = "LoveIt"
       images = []
       # Publisher info
       [params.page.seo.publisher]
-        name = ""
-        logoUrl = ""
+        name = "Triet Vo"
+        logoUrl = "/images/avatar.jpg"
 
   #  TypeIt config
   [params.typeit]
@@ -418,9 +418,9 @@ theme = "LoveIt"
   #  Site SEO config
   [params.seo]
     # image URL
-    image = ""
+    image = "/images/avatar.jpg"
     # thumbnail URL
-    thumbnailUrl = ""
+    thumbnailUrl = "/images/avatar.jpg"
 
   #  Analytics config
   [params.analytics]
@@ -441,8 +441,8 @@ theme = "LoveIt"
     enable = true
     # text strings used for Cookie consent banner
     [params.cookieconsent.content]
-      message = ""
-      dismiss = ""
+      message = "Want some cookie?"
+      dismiss = "No lul"
       link = ""
 
   #  CDN config for third-party library files
@@ -457,26 +457,15 @@ theme = "LoveIt"
   #  Compatibility config
   [params.compatibility]
     # whether to use Polyfill.io to be compatible with older browsers
-    polyfill = false
+    polyfill = true
     # whether to use object-fit-images to be compatible with older browsers
-    objectFit = false
+    objectFit = true
 
 # Author config
 [author]
   name = "Triet Vo"
   email = "triet.vo@nyu.edu"
   link = ""
-
-# Sitemap config
-[sitemap]
-  changefreq = "weekly"
-  filename = "sitemap.xml"
-  priority = 0.5
-
-# Permalinks config
-[Permalinks]
-  # posts = ":year/:month/:filename"
-  posts = ":filename"
 
 # Privacy config
 [privacy]
@@ -543,3 +532,26 @@ theme = "LoveIt"
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+
+
+[deployment]
+order = [".png$",".jpg$", ".gif$"]
+
+
+[[deployment.targets]]
+URL = "s3://trietmvo.com?region=us-east-1"
+
+[[deployment.matchers]]
+# Cache static assets for 1 year.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true
