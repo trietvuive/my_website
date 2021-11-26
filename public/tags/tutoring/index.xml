@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>tutoring - Tag - Triet Vo&#39;s new cool site</title>
+        <link>https://trietmvo.com/tags/tutoring/</link>
+        <description>tutoring - Tag - Triet Vo&#39;s new cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>triet.vo@nyu.edu (Triet Vo)</managingEditor>
+            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Sat, 03 Jul 2021 14:18:01 -0400</lastBuildDate><atom:link href="https://trietmvo.com/tags/tutoring/" rel="self" type="application/rss+xml" /><item>
+    <title>About Tutoring</title>
+    <link>https://trietmvo.com/posts/about_tutoring/</link>
+    <pubDate>Sat, 03 Jul 2021 14:18:01 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://trietmvo.com/posts/about_tutoring/</guid>
+    <description><![CDATA[I just finished tutoring an 11 years old on Algebra I today.
+The tutoring system is weird, especially for Asian countries/cultures (imo). I attended a public elementary school in Vietnam. The school is pretty good, but the teachers are still underpaid. So my teacher decided to open an after-school class at her house and make all the kids take it as an implicit quid pro quo for better grades in her class.]]></description>
+</item></channel>
+</rss>

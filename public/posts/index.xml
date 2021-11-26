@@ -4,59 +4,89 @@
         <link>https://trietmvo.com/posts/</link>
         <description>All Posts | Triet Vo&#39;s new cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>triet.vo@nyu.edu (Triet Vo)</managingEditor>
-            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Thu, 01 Jul 2021 22:02:18 -0400</lastBuildDate><atom:link href="https://trietmvo.com/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Anime I&#39;m watching</title>
-    <link>https://trietmvo.com/posts/anime_im_watching/</link>
-    <pubDate>Thu, 01 Jul 2021 22:02:18 -0400</pubDate>
+            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Sat, 14 Aug 2021 19:47:38 -0500</lastBuildDate><atom:link href="https://trietmvo.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Wave added!</title>
+    <link>https://trietmvo.com/posts/wave/</link>
+    <pubDate>Sat, 14 Aug 2021 19:47:38 -0500</pubDate>
     <author>Author</author>
-    <guid>https://trietmvo.com/posts/anime_im_watching/</guid>
-    <description><![CDATA[As promised, I&rsquo;ll use this site to shitpost. Some people will say: &ldquo;Why are you broadcasting your life and your thought to the whole world?&rdquo; Well, the NSA, Google, Facebook and Amazon already knew every details of my life anyway, so this won&rsquo;t really make a difference. Plus, I doubt anyone actually go around this corner of the internet anyway.
-The anime I&rsquo;m currently watching is Higehiro and Yuru Yuri.]]></description>
+    <guid>https://trietmvo.com/posts/wave/</guid>
+    <description><![CDATA[I created a way to wave using Ethereum wallet!
+This is mostly thanks to buildspace and Farza, a great blockchain instructor that taught the Solidity course. I was just followed along =)
+They have a Twitch stream every few days or so. Basically lecture. Feel free to explore if you want.
+I&rsquo;ll probably add a log and some other forms to wave soon, for people who just wanna leave a message or so.]]></description>
 </item><item>
-    <title>Fixing_website</title>
-    <link>https://trietmvo.com/posts/fixing_website/</link>
-    <pubDate>Thu, 01 Jul 2021 21:42:33 -0400</pubDate>
+    <title>First Guitar Arrangement!</title>
+    <link>https://trietmvo.com/posts/first-guitar-arrangement/</link>
+    <pubDate>Mon, 02 Aug 2021 16:30:35 -0500</pubDate>
     <author>Author</author>
-    <guid>https://trietmvo.com/posts/fixing_website/</guid>
-    <description><![CDATA[I&rsquo;m trying to fix the API Gateway for my website. I&rsquo;m pretty sure I configured it wrong, and I have no idea why it&rsquo;s working right now. But if it works, it works.]]></description>
+    <guid>https://trietmvo.com/posts/first-guitar-arrangement/</guid>
+    <description><![CDATA[I arranged my first ever guitar song!
+It&rsquo;s for this song. From an anime ofc. Very good anime at that; don&rsquo;t be fooled by the title, it&rsquo;s not about that.
+  I&rsquo;ll upload both the Guitar Pro and PDF in due time to the Google Drive folder. Frankly, I&rsquo;m too lazy to do it rn so&hellip; But I&rsquo;ll leave it free as a contribution to the guitar community that I constantly pulled tabs from.]]></description>
 </item><item>
-    <title>Test_deploy</title>
-    <link>https://trietmvo.com/posts/test_rdt_example/</link>
-    <pubDate>Tue, 29 Jun 2021 16:46:18 -0500</pubDate>
+    <title>Guitar Update 2</title>
+    <link>https://trietmvo.com/posts/guitar_update_2/</link>
+    <pubDate>Tue, 13 Jul 2021 16:30:35 -0500</pubDate>
     <author>Author</author>
-    <guid>https://trietmvo.com/posts/test_rdt_example/</guid>
-    <description><![CDATA[Sup]]></description>
+    <guid>https://trietmvo.com/posts/guitar_update_2/</guid>
+    <description><![CDATA[Any anime guitar repo would be incomplete without K-On, literally the greatest guitar anime there ever was. Therefore, the Drive folder now includes K-On.
+Also, my guitar repos are all tabs available online, and they are made available by very good and generous people (who are much more talented than me) that made these tabs and distribute it for free (some example: vvxo, Aethersan , Tam Lu, okayan_zeak21, and Very Nize).]]></description>
 </item><item>
-    <title>Happy Birthday to my dad</title>
-    <link>https://trietmvo.com/posts/happy-birthday-to-my-dad/</link>
-    <pubDate>Mon, 21 Jun 2021 23:44:22 -0500</pubDate>
+    <title>The Obsession with Sports</title>
+    <link>https://trietmvo.com/posts/sport/</link>
+    <pubDate>Thu, 08 Jul 2021 23:25:38 -0400</pubDate>
     <author>Author</author>
-    <guid>https://trietmvo.com/posts/happy-birthday-to-my-dad/</guid>
-    <description><![CDATA[Happy Birthday to my dad! Yea, his birthday is right next to Father&rsquo;s day. Today is his real birthday. On most paperwork, however, he&rsquo;s listed as born on a different day (because my grandparent was too busy to remember when he was born, so they just wrote some random day down).
-Happy birthday Dad. I didn&rsquo;t do much preparation this year; however, I&rsquo;ll make a real birthday and birthday gift when I get a job and stuff (or any internship that&rsquo;ll pay me well&hellip;) Thanks for working and carrying the family.]]></description>
+    <guid>https://trietmvo.com/posts/sport/</guid>
+    <description><![CDATA[It&rsquo;s the NBA finals, and this reminds me that it&rsquo;s time for shitpost. I haven&rsquo;t shitpost enough about anime, so time to talk about sports. I&rsquo;m not qualified to talk about professional sports like your usual ESPN analysts (not that they&rsquo;re even qualified to begin with), so I won&rsquo;t. However, I did play a couple of sports: Tennis tournament when I was young, swimming, soccer (cuz I&rsquo;m Asian), and basketball in high school (I still cross people up).]]></description>
 </item><item>
-    <title>Happy Father&#39;s day to my Father (from me and my little sister)</title>
-    <link>https://trietmvo.com/posts/happy-fathers-day/</link>
-    <pubDate>Sun, 20 Jun 2021 20:49:23 -0500</pubDate>
+    <title>Big brain stuff I found on Codeforces</title>
+    <link>https://trietmvo.com/posts/cf_2/</link>
+    <pubDate>Thu, 08 Jul 2021 22:27:44 -0400</pubDate>
     <author>Author</author>
-    <guid>https://trietmvo.com/posts/happy-fathers-day/</guid>
-    <description><![CDATA[Happy Father&rsquo;s Day!
-Uyen: I love you so much, You&rsquo;ve done so many things for me, and I look at you as a great dad and I praise you so much.
-Triet: Happy Father&rsquo;s Day! Cảm ơn Ba Dũng đã giúp con trong SQL với C#, với giúp gia đình mình đi Mỹ. Thanks and happy Father&rsquo;s day!
-This is the gif that my sister picked out.]]></description>
+    <guid>https://trietmvo.com/posts/cf_2/</guid>
+    <description><![CDATA[There are a lot of big brain solutions on Codeforces. Or maybe I&rsquo;m just too small-brained or haven&rsquo;t learned these things yet.
+This was the problem I found today.
+As usual, I have no idea how to do this shit (within the time limit). I thought about DP, but then I saw the n &lt;= 10^9. Any dp solution will probably requires at least N^2 - you&rsquo;ll have to loop from 1 to 10^9, and then you have to find divisors of all number.]]></description>
 </item><item>
-    <title>Test_deploy</title>
-    <link>https://trietmvo.com/posts/test_deploy/</link>
-    <pubDate>Fri, 18 Jun 2021 16:46:18 -0500</pubDate>
+    <title>Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking</title>
+    <link>https://trietmvo.com/posts/explanation_1/</link>
+    <pubDate>Thu, 08 Jul 2021 04:21:20 -0400</pubDate>
     <author>Author</author>
-    <guid>https://trietmvo.com/posts/test_deploy/</guid>
-    <description><![CDATA[Test AWS deploy]]></description>
+    <guid>https://trietmvo.com/posts/explanation_1/</guid>
+    <description><![CDATA[Besides sleeping and watching anime, I also do some studying too (emphasized on some). Sometimes, I read on topics from Algorithm/Competitive Programming, continuing my Coursera course on ML , or continue to blow shit up in AWS just because. I also forget stuff pretty quickly, so I&rsquo;ll try to document what I learned today here. Also try to see how deep I really understand what I read because if you can&rsquo;t understand what I&rsquo;m talking about here (even if you aren&rsquo;t a CS major), then there&rsquo;s a high chance I just don&rsquo;t know what I&rsquo;m talking about.]]></description>
 </item><item>
-    <title>First_post</title>
-    <link>https://trietmvo.com/posts/first_post/</link>
-    <pubDate>Thu, 17 Jun 2021 22:56:33 -0500</pubDate>
+    <title>Chess going mainstream, and how to have fun playing chess</title>
+    <link>https://trietmvo.com/posts/chess_joy/</link>
+    <pubDate>Sun, 04 Jul 2021 22:17:33 -0500</pubDate>
     <author>Author</author>
-    <guid>https://trietmvo.com/posts/first_post/</guid>
-    <description><![CDATA[This is my first site ever! That was easy. Imagine being webdev lmao /s]]></description>
+    <guid>https://trietmvo.com/posts/chess_joy/</guid>
+    <description><![CDATA[I played chess. A bit. Since 5th grade or so.
+I won some tournament back in Vietnam and here in US (not scholastic lmao). Some of my games under USCF are online, however most of the game I played in Vietnam (when I was stupid and sacked all my pieces) are lost. I kept annotation of all games, but I threw away most of it when I went to the US.]]></description>
+</item><item>
+    <title>About Tutoring</title>
+    <link>https://trietmvo.com/posts/about_tutoring/</link>
+    <pubDate>Sat, 03 Jul 2021 14:18:01 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://trietmvo.com/posts/about_tutoring/</guid>
+    <description><![CDATA[I just finished tutoring an 11 years old on Algebra I today.
+The tutoring system is weird, especially for Asian countries/cultures (imo). I attended a public elementary school in Vietnam. The school is pretty good, but the teachers are still underpaid. So my teacher decided to open an after-school class at her house and make all the kids take it as an implicit quid pro quo for better grades in her class.]]></description>
+</item><item>
+    <title>Guitar Update</title>
+    <link>https://trietmvo.com/posts/guitar_update/</link>
+    <pubDate>Sat, 03 Jul 2021 11:50:00 -0500</pubDate>
+    <author>Author</author>
+    <guid>https://trietmvo.com/posts/guitar_update/</guid>
+    <description><![CDATA[So I woke up to this today.
+I highly doubt that it&rsquo;s actually anyone who read my website or download from the Guitar S3 bucket at all. After all, I&rsquo;m not that popular. I think it&rsquo;s Google, Yahoo and their web crawler trying to index that website.
+With that said, I hate Google, Yahoo and their web crawler. And although the layout looks quite pretty, it&rsquo;s also a big inconvenience to anyone who want to download in bulk.]]></description>
+</item><item>
+    <title>Upload my guitar repo</title>
+    <link>https://trietmvo.com/posts/guitar/</link>
+    <pubDate>Fri, 02 Jul 2021 23:49:33 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://trietmvo.com/posts/guitar/</guid>
+    <description><![CDATA[I uploaded my entire guitar folders up to this point. About ~700 ish tabs, mostly/all fingerstyles (no chords btw). Note that they&rsquo;re mostly anime (though, imo, all of the songs in there are very good OP/ED. At least the one you can play on guitar anyway). They&rsquo;re mostly public, although quite hard to find (some sites I used is gametabs.net and online Youtubers).
+Access it at http://triet-guitar.s3-website-us-east-1.amazonaws.com
+Please don&rsquo;t flood it with download request.]]></description>
 </item></channel>
 </rss>

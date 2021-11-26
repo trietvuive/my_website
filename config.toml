@@ -11,7 +11,7 @@ theme = "LoveIt"
   #  LoveIt theme version
   version = "0.2.X"
   # site description
-  description = "This is My New Hugo Site"
+  description = "This is My New Hugo Site! NYU Tandon '24, Coach @ Progteam NYU, Software Senior Dev @ RDT NYU"
   # site keywords
   keywords = ["Theme", "Hugo"]
   # site default theme ("light", "dark", "auto")
@@ -132,7 +132,7 @@ theme = "LoveIt"
       #  title shown in home page (HTML format is supported)
       title = "Hello!"
       # subtitle shown in home page
-      subtitle = "This is My New Hugo Site"
+      subtitle = "CS @ NYU Tandon '24! (or '23)! The S stands for shitpost"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -348,7 +348,7 @@ theme = "LoveIt"
         emoji = "google.yml"
       # Facebook comment config
       [params.page.comment.facebook]
-        enable = false
+        enable = true
         width = "100%"
         numPosts = 10
         appId = ""
@@ -438,7 +438,7 @@ theme = "LoveIt"
 
   #  Cookie consent config
   [params.cookieconsent]
-    enable = true
+    enable = false
     # text strings used for Cookie consent banner
     [params.cookieconsent.content]
       message = "Want some cookie?"
@@ -525,6 +525,31 @@ theme = "LoveIt"
     url = "/categories/"
     title = ""
     weight = 3
+  [[menu.main]]
+    identifier = "guitar"
+    pre = ""
+    post = ""
+    name = "Guitar"
+    url = "https://drive.google.com/drive/folders/1iqBNmsS7d3mrl9xkC1-xxitwHTDOFX7r?usp=sharing"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "wave"
+    pre = ""
+    post = ""
+    name = "Wave!"
+    url = "https://wave.trietmvo.com"
+    title = ""
+    weight = 3
+  [[menu.main]]
+    identifier = "stack"
+    pre = ""
+    post = ""
+    name = "Stack!"
+    url = "https://stack.trietmvo.com"
+    title = ""
+    weight = 3
+  
 
 # Markup related configuration in Hugo
 [markup]

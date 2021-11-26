@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking - Triet Vo&#39;s new cool site</title><meta name="Description" content="This is My New Hugo Site! NYU Tandon &#39;24, Coach @ Progteam NYU, Software Senior Dev @ RDT NYU"><meta property="og:title" content="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking" />
+<meta property="og:description" content="Besides sleeping and watching anime, I also do some studying too (emphasized on some). Sometimes, I read on topics from Algorithm/Competitive Programming, continuing my Coursera course on ML , or continue to blow shit up in AWS just because. I also forget stuff pretty quickly, so I&rsquo;ll try to document what I learned today here. Also try to see how deep I really understand what I read because if you can&rsquo;t understand what I&rsquo;m talking about here (even if you aren&rsquo;t a CS major), then there&rsquo;s a high chance I just don&rsquo;t know what I&rsquo;m talking about." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://trietmvo.com/posts/explanation_1/" /><meta property="og:image" content="https://trietmvo.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-07-08T04:21:20-04:00" />
+<meta property="article:modified_time" content="2021-07-08T04:21:20-04:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://trietmvo.com/images/avatar.jpg"/>
+
+<meta name="twitter:title" content="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking"/>
+<meta name="twitter:description" content="Besides sleeping and watching anime, I also do some studying too (emphasized on some). Sometimes, I read on topics from Algorithm/Competitive Programming, continuing my Coursera course on ML , or continue to blow shit up in AWS just because. I also forget stuff pretty quickly, so I&rsquo;ll try to document what I learned today here. Also try to see how deep I really understand what I read because if you can&rsquo;t understand what I&rsquo;m talking about here (even if you aren&rsquo;t a CS major), then there&rsquo;s a high chance I just don&rsquo;t know what I&rsquo;m talking about."/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/avatar.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://trietmvo.com/posts/explanation_1/" /><link rel="prev" href="https://trietmvo.com/posts/chess_joy/" /><link rel="next" href="https://trietmvo.com/posts/cf_2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/trietmvo.com\/posts\/explanation_1\/"
+        },"image": ["https:\/\/trietmvo.com\/images\/avatar.jpg"],"genre": "posts","wordcount":  1687 ,
+        "url": "https:\/\/trietmvo.com\/posts\/explanation_1\/","datePublished": "2021-07-08T04:21:20-04:00","dateModified": "2021-07-08T04:21:20-04:00","publisher": {
+            "@type": "Organization",
+            "name": "Triet Vo","logo": "https:\/\/trietmvo.com\/images\/avatar.jpg"},"author": {
+                "@type": "Person",
+                "name": "Triet Vo"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Triet Vo&#39;s new cool site"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="https://drive.google.com/drive/folders/1iqBNmsS7d3mrl9xkC1-xxitwHTDOFX7r?usp=sharing" rel="noopener noreffer" target="_blank"> Guitar </a><a class="menu-item" href="https://stack.trietmvo.com" rel="noopener noreffer" target="_blank"> Stack! </a><a class="menu-item" href="https://wave.trietmvo.com" rel="noopener noreffer" target="_blank"> Wave! </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Triet Vo&#39;s new cool site"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="https://drive.google.com/drive/folders/1iqBNmsS7d3mrl9xkC1-xxitwHTDOFX7r?usp=sharing" title="" rel="noopener noreffer" target="_blank">Guitar</a><a class="menu-item" href="https://stack.trietmvo.com" title="" rel="noopener noreffer" target="_blank">Stack!</a><a class="menu-item" href="https://wave.trietmvo.com" title="" rel="noopener noreffer" target="_blank">Wave!</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Triet Vo</a></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw"></i>Programming</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-08">2021-07-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1687 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#edmond-karps">Edmond-Karps</a></li>
+    <li><a href="#max-flow-min-cut">Max-Flow-Min-Cut</a></li>
+    <li><a href="#support-vector-machine">Support Vector Machine</a></li>
+    <li><a href="#vpc">VPC</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Besides sleeping and watching anime, I also do some studying too (emphasized on <strong>some</strong>).
+Sometimes, I read on topics from <a href="https://cp-algorithms.com" target="_blank" rel="noopener noreffer">Algorithm/Competitive Programming</a>, continuing my <a href="https://www.coursera.org/learn/machine-learning" target="_blank" rel="noopener noreffer">Coursera course on ML</a>
+, or continue to blow shit up in AWS just because. I also forget stuff pretty quickly,
+so I&rsquo;ll try to document what I learned today here. Also try to see how deep I really understand what I read because if you can&rsquo;t understand what
+I&rsquo;m talking about here (even if you aren&rsquo;t a CS major), then there&rsquo;s a high chance I just don&rsquo;t know what I&rsquo;m talking about. Here we go:</p>
+<h2 id="edmond-karps">Edmond-Karps</h2>
+<p>Edmond-Karps is a max-flow algorithm. What&rsquo;s max-flow? Well, imagine you wanna pump water through a bunch of pipes to your neighbor&rsquo;s house to piss them off,
+but each pipes can carry a different max amount of water. But you wanna pump as much water as possible!</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow1.png"
+        data-srcset="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow1.png, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow1.png 1.5x, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow1.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow1.png"
+        title="s is where you start pumping, t is the destination" /></p>
+<p>Note that you don&rsquo;t pay the water bill. How do you do it? (However, you will pay if the pipe bursts).</p>
+<p>Edmond-Karps say you keep pumping. You find a path where all the pipes on that path can still carry water, and you keep pumping.
+Note that you can only carry the minimum of what all pipes on that path can carry. Ex: If the pipes on your path can carry 2,3,5,7, then you can only make
+them all carry 2 (cuz you pay if the 2 pipe burst).</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow7.png"
+        data-srcset="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow7.png, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow7.png 1.5x, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow7.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow7.png"
+        title="Ah, that is enough water right?" /></p>
+<p>So you pump, and you get to this. We&rsquo;re done!&hellip;?</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow8.png"
+        data-srcset="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow8.png, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow8.png 1.5x, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow8.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow8.png"
+        title="What?" /></p>
+<p>What does that picture even mean? It means instead of D pumping 3 to A, D only pumps 2, and s will compensate for that missing 1.
+Instead, D will use the extra 1 to pump to C. Extra water!</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow9.png"
+        data-srcset="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow9.png, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow9.png 1.5x, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow9.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Flow9.png"
+        title="Now that will show your neighbor" /></p>
+<p>How did you even find this? Well, same thing as last time, we will try to find path that we can still pump water through.
+However, we&rsquo;ll have a trick up our sleeve. When D pumps 3 to A, we will tell A that it can pumps 3 to D! Wait, what? But we can&rsquo;t go from A to D&hellip; You might say. Not with that attitude!</p>
+<p>Think about this, and lmk if it makes sense. You have 3 going to D (from somewhere) and you pump that 3 to A. However, let&rsquo;s say A have too much water and wanna return 2 back to D. Instead of physically pumping from A to D,
+we&rsquo;ll just tell D to pump 3-2 = 1 to A instead of 3. It still results in the same situation: Instead of D pumping 3 to A and A pumping 2 back, D only pumps 1 to A. Although we can&rsquo;t do the former irl, we can <del>cheat</del>
+use that model to handle tricky situation where we need to return water back to use on another pipe that needs it more.</p>
+<p>So that&rsquo;s that. Next time you need to flood your neighbor&rsquo;s house, remember to use <a href="https://cp-algorithms.com/graph/edmonds_karp.html" target="_blank" rel="noopener noreffer">Edmonds-Karp algorithm</a>.</p>
+<h2 id="max-flow-min-cut">Max-Flow-Min-Cut</h2>
+<p>Max-Flow-Min-Cut Theorem say that when you&rsquo;re done flooding your neighbor&rsquo;s lawn, you can keep the map of all the pipes and how much water they carry.</p>
+<p>On that piece of paper, you&rsquo;ll can divide all the nodes (nodes are the circle thingy where your water is stored) into 2 groups: A group with the source node (where you start pumping)
+and a group with the destination node (your neighbor&rsquo;s house). Pick randomly. You&rsquo;ll find that, no matter how much you try, the amount of water that flow from the
+source group to the destination group won&rsquo;t be smaller than the max flow (i.e how much water you were able to pump to your neighbor&rsquo;s house).</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Cut.png"
+        data-srcset="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Cut.png, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Cut.png 1.5x, https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Cut.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/e-maxx-eng/e-maxx-eng/master/img/Cut.png"
+        title="5 from A to B, 3 from A to C, and 2 from D to C = 10 total" /></p>
+<p>The reason: All water from your house eventually flow to your neighbor&rsquo;s house. That&rsquo;s your max flow. Therefore, water from your source node and any nodes you pick for source group will find its way to the neighbor&rsquo;s house, or through a node in the destination group before entering your neighbor&rsquo;s house.
+That&rsquo;s where our minimum of 10 come from. And the min-cut-max-flow theorem said that the minimum amount of water from source group to destination group (i.e min-cut) = your max flow.</p>
+<p>However, some nodes from the destination group (because you pick randomly) might pump water back to your source group temporarily. Because we only count water from source group to destination group, this means
+the source group get to reuse that water: they pump it to destination, destination return it temporarily, and they pump it back again to destination (remember all water ultimately ends in your neighbor&rsquo;s lawn).
+That&rsquo;s why some source/destination group configuration will have more water flowing from source to destination groups than max flow (btw, dividing all nodes to source/destination is called cut. You basically cut it into 2 groups).</p>
+<p>I think I explained that like shit, but oh well. Feel free to read more. One last thing: You can find any min-cut by starting from source, go through any pipe that can still carry water and add those nodes to source group
+(including those opposite pipes we were talking about).</p>
+<p>Some caveat:</p>
+<p>_There&rsquo;s one simplest min-cut. It&rsquo;s the source node vs everyone else.</p>
+<p>_There are min-cut that you cannot discover by only going through pipe that can still carry water. Imagine a network where all pipes are maxed out.</p>
+<p>_The reason why this works (I think, they didn&rsquo;t clarify this) is that any min-cut cannot have water from destination go back to source (because source can reuse that water, effectively increasing the amnt of water from source to dest).</p>
+<p>You eliminate this possibility by going through the opposite pipe that we talked about and add that node to your source group.  Theoretically, any cut where no destination node pump water to source node would qualify as min-cut.</p>
+<p>Tired yet? Still have 2 more to go!</p>
+<h2 id="support-vector-machine">Support Vector Machine</h2>
+<p>This section is only for those who know what I&rsquo;m talking about. Feel free to skip it.</p>
+<p>So in Machine Learning, there&rsquo;s this thing called Support Vector Machine (SVM). I won&rsquo;t even bother with how it works so feel free to look it up lmao.</p>
+<p>SVM is also a large margin classifier, which means it will try to draw a decision boundary with large distance between classes. And this only really works when C, the parameter you multiply with the cost parameter, is high.</p>
+<p>I was initially confused by this, even after looking through the vector stuff. Since C is high, I thought that the SVM can compensate by just making theta obscenely high, since regularization doesn&rsquo;t matter to it as much as the cost parameter.</p>
+<p>However, after thinking it over, I realized that it could do that, but it can do better by just picking a large margin instead, since it&rsquo;s still punished quadratically for making theta high.
+In fact, large margin is implicitly encouraged by making C high. In contrast, when C is low, it can just underfit and make close decision boundary, since it cares more about making theta low. But yea, the large margin thing was quite interesting. Idk.</p>
+<h2 id="vpc">VPC</h2>
+<p>So I&rsquo;m reading a book about AWS (cuz I&rsquo;m a nerd) while also blowing shit up in the console. But I&rsquo;m poor, so I try not to blow too much up.</p>
+<p>Anyway, I was reading about VPC and networking, and I&rsquo;m not exactly any good at networking. I thought I&rsquo;ll just list some term here and try my best to define them. Feel free to check it if you actually know what they are;
+feel free to lmk if you understand (because if you don&rsquo;t, then I prob don&rsquo;t understand it that well):</p>
+<p>VPC: Virtual Private Cloud. Basically networking stuff so that you manage all the connections and won&rsquo;t be featured on <a href="https://haveibeenpwned.com" target="_blank" rel="noopener noreffer">haveibeenpwned.com</a>.</p>
+<p>CIDR blocks: A huge continuous block of IP. AWS give your VPC a primary CIDR blocks to mess with.</p>
+<p>IP(v4): I&rsquo;m still not sure if I understand it well. Just know that it&rsquo;s used to connect you with stuff through Internet or your local network, or, in this case, VPC network. IPv4 is usually from 0.0.0.0 to 255.255.255.255.</p>
+<p>Prefix length: Describes how many bits in the subnet, but more importantly, how many IP you have in the CIDR blocks. /24 means that the mask is xxx.xxx.xxx., therefore you can only go from xxx.xxx.xxx.0 to xxx.xxx.xxx.255.
+Also, lower is better, since you&rsquo;ll have less x, more range of IP address =&gt; more IP address. CIDR blocks are described with an IP mask and a prefix length. Ex: 192.168.0.0/16 means that you can go from 192.168.0.0 to 192.168.255.255, while
+192.168.0.0/24 means that you can only go from 192.168.0.0 to 192.168.0.255 (since 24 means you can&rsquo;t move around the first 3 of the 4 parts, kinda). Prefix length can go from 1 to 32 - it just means how many bytes the mask contains. But that will requires more explanation,
+so just remember it as how many IP the AWS overlord gives you.</p>
+<p>IP(v6): No lul. It&rsquo;s still pretty cool and good tho.</p>
+<p>Subnet: Within your CIDR blocks, you can chop those IP addresses up into subnet to use for different purpose. My book mentions that you can chop some for web server and some for database server, so that&rsquo;s that. Also, you cannot
+have subnets with overlapping range, and they must be all within the range of the VPC CIDR block.</p>
+<p>Also, apparently AWS also took the first 3 IP address and the last one in every subnet for fun. You can&rsquo;t complain to Jeff Bezos for this one, altho you can complain to the new CEO, since he apparently used to lead AWS.</p>
+<p>Also, that was wild. The dude who lead AWS is now the CEO of Amazon. I guess even they start to realize that AWS might be the new and better Amazon.com.</p>
+<p>That&rsquo;s all for today. Fuck I need to actually sleep. I&rsquo;ll wake up tomorrow and see if I can actually understand what&rsquo;s being written here. I bet that 90% of this is incoherent anyway.
+I&rsquo;mma go back to shitposting about anime tomorrow (not that this isn&rsquo;t shitposting, just a bit higher-quality than what I usually put on here).</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-07-08</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/explanation_1/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://trietmvo.com/posts/explanation_1/" data-title="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://trietmvo.com/posts/explanation_1/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://trietmvo.com/posts/explanation_1/" data-title="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://trietmvo.com/posts/explanation_1/" data-title="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://trietmvo.com/posts/explanation_1/" data-title="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://trietmvo.com/posts/explanation_1/" data-title="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://trietmvo.com/posts/explanation_1/" data-title="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://trietmvo.com/posts/explanation_1/" data-title="Dumb it down: Edmond-Karps, Max-Flow-Min-Cut, Support Vector Machine, VPC/Networking"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/chess_joy/" class="prev" rel="prev" title="Chess going mainstream, and how to have fun playing chess"><i class="fas fa-angle-left fa-fw"></i>Chess going mainstream, and how to have fun playing chess</a>
+            <a href="/posts/cf_2/" class="next" rel="next" title="Big brain stuff I found on Codeforces">Big brain stuff I found on Codeforces<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="https://trietmvo.com/posts/explanation_1/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.83.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Triet Vo</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://mit-license.org/" target="_blank">MIT License</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Triet Vo's new cool site","id-2":"Triet Vo's new cool site"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

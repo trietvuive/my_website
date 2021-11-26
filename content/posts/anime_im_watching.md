@@ -2,6 +2,9 @@
 title: "Anime I'm watching"
 date: 2021-07-01T22:02:18-04:00
 draft: false
+
+tags: [Higehiro, Osamake, Yuru Yuri]
+categories: [Anime, Shitpost]
 ---
 As promised, I'll use this site to shitpost. Some people will say: "Why are you 
 broadcasting your life and your thought to the whole world?" Well, the NSA, Google,
