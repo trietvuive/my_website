@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Blockchain - Tag - Triet Vo&#39;s new cool site</title>
+        <link>https://trietmvo.com/tags/blockchain/</link>
+        <description>Blockchain - Tag - Triet Vo&#39;s new cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>triet.vo@nyu.edu (Triet Vo)</managingEditor>
+            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Wed, 25 May 2022 00:28:13 -0400</lastBuildDate><atom:link href="https://trietmvo.com/tags/blockchain/" rel="self" type="application/rss+xml" /><item>
+    <title>Luna, stablecoin and WAGMI</title>
+    <link>https://trietmvo.com/posts/stablecoin/</link>
+    <pubDate>Wed, 25 May 2022 00:28:13 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://trietmvo.com/posts/stablecoin/</guid>
+    <description><![CDATA[For those who aren&rsquo;t familiar with blockchain (which, lucky you&hellip;), there&rsquo;s a cryptocurrency called Luna/UST that crashes. Not just any random coin btw, it&rsquo;s on the top 5/10 of cryptocurrencies. It&rsquo;s actually used as a stablecoin (algorithmic stablecoin, to be exact&hellip;) which is just a fancy term for an alternative to a dollar. It tries to artificially cap the price to be exactly 1 dollar, and if you think suppressing something&rsquo;s price is a bad idea, well you&rsquo;re correct.]]></description>
+</item></channel>
+</rss>

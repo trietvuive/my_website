@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Some fun technique I found while doing competitive programming puzzles: Regex DP - Triet Vo&#39;s new cool site</title><meta name="Description" content="Random puzzle stuff"><meta property="og:title" content="Some fun technique I found while doing competitive programming puzzles: Regex DP" />
+<meta property="og:description" content="Random puzzle stuff" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://trietmvo.com/posts/regex-dp/" /><meta property="og:image" content="https://trietmvo.com/images/avatar.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-05-25T00:28:13-04:00" />
+<meta property="article:modified_time" content="2022-05-25T00:28:13-04:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://trietmvo.com/images/avatar.jpg"/>
+
+<meta name="twitter:title" content="Some fun technique I found while doing competitive programming puzzles: Regex DP"/>
+<meta name="twitter:description" content="Random puzzle stuff"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/avatar.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://trietmvo.com/posts/regex-dp/" /><link rel="prev" href="https://trietmvo.com/posts/wave/" /><link rel="next" href="https://trietmvo.com/posts/stablecoin/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Some fun technique I found while doing competitive programming puzzles: Regex DP",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/trietmvo.com\/posts\/regex-dp\/"
+        },"image": ["https:\/\/trietmvo.com\/images\/avatar.jpg"],"genre": "posts","keywords": "CF","wordcount":  1007 ,
+        "url": "https:\/\/trietmvo.com\/posts\/regex-dp\/","datePublished": "2022-05-25T00:28:13-04:00","dateModified": "2022-05-25T00:28:13-04:00","publisher": {
+            "@type": "Organization",
+            "name": "Triet Vo","logo": "https:\/\/trietmvo.com\/images\/avatar.jpg"},"author": {
+                "@type": "Person",
+                "name": "Triet Vo"
+            },"description": "Random puzzle stuff"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Triet Vo&#39;s new cool site"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="https://ethics.trietmvo.com" rel="noopener noreffer" target="_blank"> Ethics </a><a class="menu-item" href="https://stack.trietmvo.com" rel="noopener noreffer" target="_blank"> Stack! </a><a class="menu-item" href="https://wave.trietmvo.com" rel="noopener noreffer" target="_blank"> Wave! </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Triet Vo&#39;s new cool site"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.png"
+        data-srcset="/images/logo.png, /images/logo.png 1.5x, /images/logo.png 2x"
+        data-sizes="auto"
+        alt="/images/logo.png"
+        title="/images/logo.png" /><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="https://ethics.trietmvo.com" title="" rel="noopener noreffer" target="_blank">Ethics</a><a class="menu-item" href="https://stack.trietmvo.com" title="" rel="noopener noreffer" target="_blank">Stack!</a><a class="menu-item" href="https://wave.trietmvo.com" title="" rel="noopener noreffer" target="_blank">Wave!</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Some fun technique I found while doing competitive programming puzzles: Regex DP</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Triet Vo</a></span>&nbsp;<span class="post-category">included in <a href="/categories/programming/"><i class="far fa-folder fa-fw"></i>Programming</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-05-25">2022-05-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1007 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><p>I do some competitive programming problems for fun, because I have a twisted sense of humor. Recently, I repeatedly encounter a pattern in those problems with a very elegant dynamic programming solution. <!-- raw HTML omitted -->
+I haven&rsquo;t seen anything like this elsewhere, although I&rsquo;m somewhat aware that regex do use DP. The pattern I&rsquo;m noticing is more of regex + subsequence. Let&rsquo;s give a concrete example:</p>
+<blockquote>
+<p>Given a sequence of 0 and 1. Supposed that you can choose any [l,r] interval and reverse them (only once). <!-- raw HTML omitted --></p>
+<p>What&rsquo;s the longest non-decreasing subsequence you can get?</p>
+<p>Example input: [0,1,0,1] =&gt; 4. You can reverse [2,3] to get [0,0,1,1] and get 4.</p>
+<p>Example input: [0,0,1,1,1,0,0,1,1,0] =&gt; 9. You can reverse [3,7] to get [0,0,0,0,1,1,1,1,1,0] and get 9.</p>
+<p>Note that this is a subsequence problem, not substring. If you have something like [0,1,0,1,0,1], you can still get 4 from picking [0,0,0,1].</p>
+</blockquote>
+<p>Some initial approach I can think of is to count number of 0 as you go left and number of 1 as you go right. However, there&rsquo;s a more elegant solution. <!-- raw HTML omitted --></p>
+<h1 id="rephrasing-the-problem">Rephrasing the problem</h1>
+<p>Let&rsquo;s divide the sequence into 4 areas: A,B,C,D. A is left of B, B is left of C,&hellip; <!-- raw HTML omitted -->
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/dp.png"
+        data-srcset="/images/dp.png, /images/dp.png 1.5x, /images/dp.png 2x"
+        data-sizes="auto"
+        alt="/images/dp.png"
+        title="Straight from Paint" /></p>
+<p>A and C is where you only pick 0, B and D is where you only pick 1. <!-- raw HTML omitted --></p>
+<p>Our problem now becomes how to divide the subsequence into ABCD such that maximize the number of 0 you pick from A&amp;C + number of 1 you pick from B&amp;D. Note that A,B,C,D can be empty area. <!-- raw HTML omitted --></p>
+<p>Why can the problem be formulated this way? Note that since you pick 0 from A&amp;C and 1 from B&amp;D, if you reverse B and C, you will have A C B D, with 0 coming from A and C and 1 coming from B and D. Then, the subsequence you pick will be non-decreasing.</p>
+<p>The length of the subsequence above, if you choose ABCD that way, will be 2 + 3 + 1 + 3 = 9. For reference, the input sequence would be 0110 01110 110111 00111.</p>
+<p>Also, I&rsquo;m aware that it&rsquo;s not neatly 4 bits. Deal with it =).</p>
+<h1 id="elegant-dp-solution">Elegant dp solution</h1>
+<p>So now we rephrase the problem. But rephrasing the problem doesn&rsquo;t help if there&rsquo;s no elegant solution coming from it.
+In comes dp.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">		<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">c</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span></code></pre></div><p>&ldquo;What the hell did you just write?&rdquo; You might ask.</p>
+<p>Let&rsquo;s start with the array dp.</p>
+<p>Here, dp[0] will be the max length if we only get to use A (aka only get to pick 0).</p>
+<p>dp[1] will be the max length if we only get to use A and B (only pick 0 and pick 1 after 0). You don&rsquo;t have to use B, and if you don&rsquo;t, then dp[0] = dp[1].</p>
+<p>dp[2] will be max length for A B C</p>
+<p>and dp[3] will be max length for A B C D.</p>
+<p>We&rsquo;ll loop through the sequence. For every number, dp[1] will compare itself with dp[0]. If dp[0] is larger, that means the whole thing should&rsquo;ve been in A.</p>
+<p>Example: 00100. dp[0] will pick 00, skip 1, then pick 00. dp[1] will initially go with 001, skip 0, then realize that it would have been better off lumping the whole thing in A to get 4, because 4 &gt; 3.</p>
+<p>Then, dp[2] will constantly update with dp[1], dp[3] will constantly update with dp[2].</p>
+<p>Note that putting 00100 in A will always be optimal. You can always switch to B anytime you like, but once you&rsquo;re in B you cannot switch back to A.</p>
+<p>If you encounter a 0, you can +1 to dp[0] and dp[2], and if you encounter a 1, you can +1 to dp[1] and dp[3] (Hence the c % 2 == i % 2). Note that dp[1] might end up increase by 1 even if you encounter a 0 since it might decide it&rsquo;s better off to not start B yet and just lump the whole thing in A for the time being (aka the 00100 example).</p>
+<p>I&rsquo;m not too good at explanation, so if you are still with me at this point, then congrats! Then, the answer would be in dp[3], because dp[3] is where you get to use all of ABCD. Note that dp[3] would also be the largest number in dp, and dp[3] &gt;= dp[2] &gt;= dp[1] &gt;= dp[0].</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>The 4-liner python looks simple, but whoever invent this must have been a massive brain. This somewhat resembles constraints in algorithm where you would intentionally add more constraints to make the problem easier, then solve it and use the solution to solve the original problem.</p>
+<p>In fact, that&rsquo;s the nature of dynamic programming: splitting problems into subproblems and use subproblems&rsquo; solution for larger problem. However, I haven&rsquo;t seen this technique ever elsewhere outside of competitive programming (and even competitive programming book seems to not have it?)</p>
+<p>That&rsquo;s why I named it regex dp. What it basically does is count the largest subsequence of a certain format (let&rsquo;s say you want the longest subsequence that follows 1234 - 1122344 for example. Then you would count longest 1, then longest 12, then longest 123, then longest 1234. If 1233 doesn&rsquo;t follow the rule, then your formula will look like max(dp[i], dp[i-1] + 1) instead). It bears a lot of similarity to problems like longest subsequence, but also doesn&rsquo;t really. The ABCD technique is also pretty neat, and whoever came up with this (probably someone in CP community, since I haven&rsquo;t encounter this outside of CP) must be pretty big-brained. Not me lol, though I do wish 😔.</p>
+<p>PS: I watched a video on Hamming code by <a href="https://www.youtube.com/watch?v=X8jsijhllIA" target="_blank" rel="noopener noreffer">3Blue1Brown</a>. Hamming code is also pretty elegant, and it must&rsquo;ve take ton of trial and error to come up with such simple and elegant solution. Regex DP is also very elegant (though not that simple), and I can&rsquo;t imagine the amount of creativity that it takes to come up with this.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-05-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/regex-dp/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://trietmvo.com/posts/regex-dp/" data-title="Some fun technique I found while doing competitive programming puzzles: Regex DP" data-via="TrietV0210" data-hashtags="CF"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://trietmvo.com/posts/regex-dp/" data-hashtag="CF"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://trietmvo.com/posts/regex-dp/" data-title="Some fun technique I found while doing competitive programming puzzles: Regex DP" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://trietmvo.com/posts/regex-dp/" data-title="Some fun technique I found while doing competitive programming puzzles: Regex DP"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://trietmvo.com/posts/regex-dp/" data-title="Some fun technique I found while doing competitive programming puzzles: Regex DP"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://trietmvo.com/posts/regex-dp/" data-title="Some fun technique I found while doing competitive programming puzzles: Regex DP" data-description="Random puzzle stuff"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://trietmvo.com/posts/regex-dp/" data-title="Some fun technique I found while doing competitive programming puzzles: Regex DP" data-description="Random puzzle stuff"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://trietmvo.com/posts/regex-dp/" data-title="Some fun technique I found while doing competitive programming puzzles: Regex DP"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cf/">CF</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/wave/" class="prev" rel="prev" title="Wave added!"><i class="fas fa-angle-left fa-fw"></i>Wave added!</a>
+            <a href="/posts/stablecoin/" class="next" rel="next" title="Luna, stablecoin and WAGMI">Luna, stablecoin and WAGMI<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="https://trietmvo.com/posts/regex-dp/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.102.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Triet Vo</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://mit-license.org/" target="_blank">MIT License</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.js"></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/typeit.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"Triet Vo's new cool site","id-2":"Triet Vo's new cool site"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"twemoji":true,"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

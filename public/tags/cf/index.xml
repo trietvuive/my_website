@@ -4,7 +4,15 @@
         <link>https://trietmvo.com/tags/cf/</link>
         <description>CF - Tag - Triet Vo&#39;s new cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>triet.vo@nyu.edu (Triet Vo)</managingEditor>
-            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Thu, 08 Jul 2021 22:27:44 -0400</lastBuildDate><atom:link href="https://trietmvo.com/tags/cf/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Wed, 25 May 2022 00:28:13 -0400</lastBuildDate><atom:link href="https://trietmvo.com/tags/cf/" rel="self" type="application/rss+xml" /><item>
+    <title>Some fun technique I found while doing competitive programming puzzles: Regex DP</title>
+    <link>https://trietmvo.com/posts/regex-dp/</link>
+    <pubDate>Wed, 25 May 2022 00:28:13 -0400</pubDate>
+    <author>Author</author>
+    <guid>https://trietmvo.com/posts/regex-dp/</guid>
+    <description><![CDATA[I do some competitive programming problems for fun, because I have a twisted sense of humor. Recently, I repeatedly encounter a pattern in those problems with a very elegant dynamic programming solution. I haven&rsquo;t seen anything like this elsewhere, although I&rsquo;m somewhat aware that regex do use DP. The pattern I&rsquo;m noticing is more of regex + subsequence. Let&rsquo;s give a concrete example:
+Given a sequence of 0 and 1. Supposed that you can choose any [l,r] interval and reverse them (only once).]]></description>
+</item><item>
     <title>Big brain stuff I found on Codeforces</title>
     <link>https://trietmvo.com/posts/cf_2/</link>
     <pubDate>Thu, 08 Jul 2021 22:27:44 -0400</pubDate>

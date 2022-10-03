@@ -152,8 +152,8 @@ theme = "LoveIt"
   [params.social]
     GitHub = "trietvuive"
     Linkedin = "triet-vo-445772183/"
-    Twitter = ""
-    Instagram = ""
+    Twitter = "TrietV0210"
+    Instagram = "trietvo3002"
     Facebook = "minhtriet.vo.372/"
     Telegram = ""
     Medium = ""
@@ -526,11 +526,11 @@ theme = "LoveIt"
     title = ""
     weight = 3
   [[menu.main]]
-    identifier = "guitar"
+    identifier = "Ethics"
     pre = ""
     post = ""
-    name = "Guitar"
-    url = "https://drive.google.com/drive/folders/1iqBNmsS7d3mrl9xkC1-xxitwHTDOFX7r?usp=sharing"
+    name = "Ethics"
+    url = "https://ethics.trietmvo.com"
     title = ""
     weight = 3
   [[menu.main]]
