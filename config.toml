@@ -11,7 +11,7 @@ theme = "LoveIt"
   #  LoveIt theme version
   version = "0.2.X"
   # site description
-  description = "This is My New Hugo Site! NYU Tandon '24, Coach @ Progteam NYU, Software Senior Dev @ RDT NYU"
+  description = "NYU Tandon '23! Leader @ PPT, incoming @ Roblox"
   # site keywords
   keywords = ["Theme", "Hugo"]
   # site default theme ("light", "dark", "auto")
@@ -132,7 +132,7 @@ theme = "LoveIt"
       #  title shown in home page (HTML format is supported)
       title = "Hello!"
       # subtitle shown in home page
-      subtitle = "CS @ NYU Tandon '24! (or '23)! The S stands for shitpost"
+      subtitle = "CS @ NYU Tandon '23! The S stands for shitpost"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
