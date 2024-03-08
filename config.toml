@@ -11,7 +11,7 @@ theme = "LoveIt"
   #  LoveIt theme version
   version = "0.2.X"
   # site description
-  description = "NYU Tandon '23! Leader @ PPT, incoming @ Roblox"
+  description = "My website!"
   # site keywords
   keywords = ["Theme", "Hugo"]
   # site default theme ("light", "dark", "auto")
@@ -132,7 +132,7 @@ theme = "LoveIt"
       #  title shown in home page (HTML format is supported)
       title = "Hello!"
       # subtitle shown in home page
-      subtitle = "CS @ NYU Tandon '23! The S stands for shitpost"
+      subtitle = "@ Roblox :)"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
@@ -557,6 +557,8 @@ theme = "LoveIt"
   [markup.highlight]
     # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+	[markup.goldmark.renderer]
+		unsafe = true
 
 
 [deployment]

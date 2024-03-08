@@ -4,7 +4,14 @@
         <link>https://trietmvo.com/posts/</link>
         <description>All Posts | Triet Vo&#39;s new cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>triet.vo@nyu.edu (Triet Vo)</managingEditor>
-            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Wed, 25 May 2022 00:28:13 -0400</lastBuildDate><atom:link href="https://trietmvo.com/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>triet.vo@nyu.edu (Triet Vo)</webMaster><lastBuildDate>Sat, 22 Jul 2023 20:02:24 -0700</lastBuildDate><atom:link href="https://trietmvo.com/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Meeting Wifey!~~</title>
+    <link>https://trietmvo.com/posts/meeting-wifey/</link>
+    <pubDate>Sat, 22 Jul 2023 20:02:24 -0700</pubDate>
+    <author>Author</author>
+    <guid>https://trietmvo.com/posts/meeting-wifey/</guid>
+    <description><![CDATA[ ]]></description>
+</item><item>
     <title>Luna, stablecoin and WAGMI</title>
     <link>https://trietmvo.com/posts/stablecoin/</link>
     <pubDate>Wed, 25 May 2022 00:28:13 -0400</pubDate>
@@ -77,13 +84,5 @@ As usual, I have no idea how to do this shit (within the time limit). I thought 
     <guid>https://trietmvo.com/posts/chess_joy/</guid>
     <description><![CDATA[I played chess. A bit. Since 5th grade or so.
 I won some tournament back in Vietnam and here in US (not scholastic lmao). Some of my games under USCF are online, however most of the game I played in Vietnam (when I was stupid and sacked all my pieces) are lost. I kept annotation of all games, but I threw away most of it when I went to the US.]]></description>
-</item><item>
-    <title>About Tutoring</title>
-    <link>https://trietmvo.com/posts/about_tutoring/</link>
-    <pubDate>Sat, 03 Jul 2021 14:18:01 -0400</pubDate>
-    <author>Author</author>
-    <guid>https://trietmvo.com/posts/about_tutoring/</guid>
-    <description><![CDATA[I just finished tutoring an 11 years old on Algebra I today.
-The tutoring system is weird, especially for Asian countries/cultures (imo). I attended a public elementary school in Vietnam. The school is pretty good, but the teachers are still underpaid. So my teacher decided to open an after-school class at her house and make all the kids take it as an implicit quid pro quo for better grades in her class.]]></description>
 </item></channel>
 </rss>
