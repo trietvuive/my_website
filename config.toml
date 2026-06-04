@@ -47,6 +47,7 @@ order = [".png$", ".jpg$", ".gif$"]
 
 [[deployment.targets]]
 URL = "s3://trietmvo.com?region=us-east-1"
+cloudFrontDistributionID = "E2JHGEJAOSKFFP"
 
 [[deployment.matchers]]
 pattern = "^.+\\.(js|css|svg|ttf)$"
